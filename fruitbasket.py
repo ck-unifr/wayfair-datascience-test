@@ -14,7 +14,6 @@
 # - It should run efficiently for very large numbers of types and quantities of fruits
 #
 #
-#
 # author: Kai Chen
 # date: April, 2019
 #
@@ -28,26 +27,23 @@ def pick_fruit(fruit_basket):
     :return: a string presents the fruit picked from the basket according to the likelihood of picking each fruit.
     """
 
-    # compute the sum of the fruit
+    # compute the sum of the fruit in the basket
     fruit_sum = sum(fruit_basket.values())
 
-    # compute the probabilities
-    fruit_prob = dict()
+    # compute the probabilities of each fruit being picked
     if fruit_sum == 0:
-        for key, value in fruit_basket.items():
-            fruit_prob[key] = 0
+        fruit_prob = {key:0 for key, value in fruit_basket.items()}
     else:
-        for key, value in fruit_basket.items():
-            fruit_prob[key] = value*1.0/fruit_sum
+        fruit_prob = {key:value*1.0/fruit_sum for key, value in fruit_basket.items()}
 
-    #print(fruit_prob.keys())
-    #print(fruit_prob.values())
-
+    # get the index of the randomly picked fruit according to the likelihood of picking each fruit
     fruit_index = np.random.choice(len(fruit_prob.keys()), 1, p=list(fruit_prob.values()))
 
+    # get the fruit name
     fruit = list(fruit_prob.keys())[fruit_index[0]]
 
     return fruit
+
 
 if __name__ == '__main__':
     fruit_basket = {'apple': 7, 'banana': 3, 'orange': 5}
