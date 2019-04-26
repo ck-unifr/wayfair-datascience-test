@@ -28,12 +28,9 @@ def pick_fruit(fruit_basket):
     :param a dictionary, keys describe the type of fruit,the values their quantity. For example: fruit_basket = {‘apple’: 7, ‘banana’: 3, ‘orange’: 5}
     :return: a string presents the fruit picked from the basket according to the likelihood of picking each fruit.
     """
-    fruit = ''
 
     # compute the sum of the fruit
     fruit_sum = sum(fruit_basket.values())
-
-    fruit_list = list(fruit_basket.keys())
 
     # compute the probabilities
     fruit_prob = dict()
