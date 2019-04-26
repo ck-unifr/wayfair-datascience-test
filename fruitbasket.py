@@ -19,7 +19,6 @@
 # date: April, 2019
 #
 
-import random
 import numpy as np
 
 def pick_fruit(fruit_basket):
