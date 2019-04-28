@@ -1,3 +1,5 @@
+# Wayfair homework task
+#
 # Problem:
 # You can solve the following problem in either Python or R.
 # You are given a dictionary/list representing a basket with different types of fruits in it.
@@ -15,7 +17,7 @@
 #
 #
 # author: Kai Chen
-# date: April, 2019
+# date:   April, 2019
 #
 
 import numpy as np
