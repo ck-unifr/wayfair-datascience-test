@@ -39,6 +39,7 @@ def pick_fruit(fruit_basket):
         fruit_prob = {key:value*1.0/fruit_sum for key, value in fruit_basket.items()}
 
     # get the index of the randomly picked fruit according to the likelihood of picking each fruit
+    # this function generates a random sample from a given 1-d array
     fruit_index = np.random.choice(len(fruit_prob.keys()), 1, p=list(fruit_prob.values()))
 
     # get the fruit name
